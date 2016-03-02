@@ -13,5 +13,10 @@ console.log(noises.length);
 console.log(noises[noises.length - 1]);
 console.log(noises);
 
+animal.noises += noises;
+animal.noises.push("whine");
+console.log(animal);
 
-
+var animals = [];
+animals.push(animal);
+console.log(animals);
