@@ -54,6 +54,35 @@ friends.push(random());
 console.log(friends);
 animals[2].friends = friends;
 
+function search(animalName){
+    for (var i = 0; i < animals.length; i++){
+        if(animalName === animals[i].name) return animals[i];
+    }
+    return null;
+}
+function edit(animalName, object){
+    var animal = search(animalName);
+    if (animal){
+        var index = animals.indexOf(animal);
+        animals[index] = object; 
+    }
+}
+function remove(animalName){
+    var animal = search(animalName);
+    if(animal){
+        var index = animals.indexOf(animal);
+        animals.splice(index, 1);
+    }
+}
+
+function create(object){
+    var nameCheck = search(object.name);
+    if (object.name.length && object.species.length && !nameCheck)
+        animals.push(object)
+}
+
+
+
 
 
 
