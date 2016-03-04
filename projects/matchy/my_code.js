@@ -56,7 +56,7 @@ animals[2].friends = friends;
 
 function search(animalName){
     for (var i = 0; i < animals.length; i++){
-        if(animalName === animals[i].name) return animals[i];
+        if(animalName.toUpperCase() === animals[i].name.toUpperCase()) return animals[i];
     }
     return null;
 }
