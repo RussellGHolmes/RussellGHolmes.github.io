@@ -78,7 +78,7 @@ function remove(animalName){
 function create(object){
     var nameCheck = search(object.name);
     if (object.name.length && object.species.length && !nameCheck)
-        animals.push(object)
+        animals.push(object);
 }
 
 
