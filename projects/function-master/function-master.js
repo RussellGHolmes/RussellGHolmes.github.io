@@ -59,7 +59,7 @@ function maybeNoises(object){
 }
 
 function hasWord(string, word){
-    if (string.indexOf(word) > 0)
+    if (string.indexOf(word) > -1)
         return true;
     return false;
 }
@@ -78,9 +78,27 @@ function isFriend(name, object){
     }    
     return false;
 }
+function arrayIncludes(array, element){
+    return (array.indexOf(element) > -1);
+}
 
-function nonFriends(name, list){
+function nonFriends(name, people){
     var nonFriends = [];
-    console.log();
+    var person;
+    for (var i = 0; i < people.length; i++){
+        if (people[i].name === name)
+            person = people[i];
+    }
+    var friends = person.friends;
+    for (var j = 0; j < people.length; j++){
+        if (people[j] == person) continue;
+        if (!arrayIncludes(friends, people[j].name)){
+            nonFriends.push(people[j].name);
+        }
+    }
     return nonFriends;
 } 
+
+function updateObject(object, key, value){
+    
+}
