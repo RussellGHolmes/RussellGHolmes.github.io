@@ -38,3 +38,49 @@ function capitalizeAllWords(string){
     }
     return output.trim();    
 }   
+
+function welcomeMessage(object){
+    return "Welcome " + capitalizeWord(object.name) + "!"; 
+}
+
+function profileInfo(object){
+    return capitalizeWord(object.name) + " is a " + capitalizeWord(object.species);
+}
+
+function maybeNoises(object){
+    if (object.noises && object.noises[0]){
+        var noiseString = "";
+        for (var i = 0; i < object.noises.length; i++){
+            noiseString += object.noises[i] + " ";
+        }
+        return noiseString.trim();
+    }
+    return "there are no noises";
+}
+
+function hasWord(string, word){
+    if (string.indexOf(word) > 0)
+        return true;
+    return false;
+}
+
+function addFriend(name, object){
+    object.friends.push(name);
+    return object;
+}
+
+function isFriend(name, object){
+    if (object.friends){
+        for (var i = 0; i < object.friends.length; i++){
+            if (object.friends[i] === name)
+                return true;
+        }
+    }    
+    return false;
+}
+
+function nonFriends(name, list){
+    var nonFriends = [];
+    console.log();
+    return nonFriends;
+} 
