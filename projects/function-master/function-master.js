@@ -100,5 +100,34 @@ function nonFriends(name, people){
 } 
 
 function updateObject(object, key, value){
-    
+    if (!object[key]){
+        object[key] = value;
+    }
+    else if (object[key]){
+        object[key] = value;
+    }
+    return object;
 }
+
+function removeProperties(object, array){
+    for (var i = 0; i < array.length; i++){
+        if (object[array[i]] !== undefined){
+            delete object[array[i]];
+        }
+    }    
+    return object;     
+}
+
+function dedup(array){
+    var newArray = [];
+    for (var i = 0; i < array.length; i++){
+        if (!(newArray.indexOf(array[i]) > -1))
+            newArray.push(array[i])
+    }
+    return newArray;
+}
+
+
+
+
+
