@@ -123,7 +123,18 @@ _.last = function(array, number){
 *      -> should log "a" "b" "c" to the console
 */
 
-
+_.each = function(aCollection, aFunction){
+    if (_.typeOf(aCollection) === "array" ){
+        for (var i = 0; i < aCollection.length; i++){
+            aFunction(aCollection[i], i, aCollection);
+        }
+    }
+    if (_.typeOf(aCollection) === "object"){
+        for (var key in aCollection){
+            aFunction(aCollection[key], key, aCollection);
+        }
+    }
+};
 
 /** _.indexOf()
 * Arguments:
@@ -141,6 +152,9 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value){
+    
+};
 
 /** _.filter()
 * Arguments:
