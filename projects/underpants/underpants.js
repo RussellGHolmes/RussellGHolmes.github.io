@@ -234,6 +234,9 @@ _.reject = function reject(array, aFunction){
 }
 */
 
+_.partition = function partition(array, fn){
+
+};
 
 /** _.unique()
 * Arguments:
