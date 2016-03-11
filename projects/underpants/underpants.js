@@ -100,7 +100,7 @@ _.first = function first(array, number){
 *   _.last(["a", "b", "c"], "ponies") -> ["a","b","c"]
 */
 
-_.last = function(array, number){
+_.last = function last(array, number){
     if (!Array.isArray(array) || number < 0) return [];
     if (number === undefined || number === null || typeof number !== "number" || number === 1) return array[array.length - 1];
     if (number > array.length) return array;
@@ -123,7 +123,7 @@ _.last = function(array, number){
 *      -> should log "a" "b" "c" to the console
 */
 
-_.each = function(aCollection, aFunction){
+_.each = function each(aCollection, aFunction){
     if (_.typeOf(aCollection) === "array" ){
         for (var i = 0; i < aCollection.length; i++){
             aFunction(aCollection[i], i, aCollection);
@@ -152,7 +152,7 @@ _.each = function(aCollection, aFunction){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-_.indexOf = function(array, value){
+_.indexOf = function indexOf(array, value){
     for (var i = 0; i < array.length; i++){
         if (array[i] === value) return i;
     }
@@ -175,7 +175,7 @@ _.indexOf = function(array, value){
 *   use _.each in your implementation
 */
 
-_.filter = function(array, aFunction){
+_.filter = function filter(array, aFunction){
     var newArray = [];
     for (var i = 0; i < array.length; i++){
         if (aFunction(array[i], i, array))
@@ -183,6 +183,16 @@ _.filter = function(array, aFunction){
     }
     return newArray;
 };
+/*
+_.filter = function filter(array, fn){
+    var out = [];
+    
+    _.each(array, function (el, i, col) {
+        if (fn(el, i, col)) out.push(el);
+    }
+    return out;
+};
+*/
 
 /** _.reject()
 * Arguments:
@@ -197,6 +207,13 @@ _.filter = function(array, aFunction){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function reject(array, aFunction){
+    
+    return _.filter(array, function(element, index, array){
+        return !aFunction(element, index, array); 
+        
+    });
+};
 
 /** _.partition()
 * Arguments:
