@@ -153,7 +153,10 @@ _.each = function(aCollection, aFunction){
 */
 
 _.indexOf = function(array, value){
-    
+    for (var i = 0; i < array.length; i++){
+        if (array[i] === value) return i;
+    }
+    return -1;
 };
 
 /** _.filter()
