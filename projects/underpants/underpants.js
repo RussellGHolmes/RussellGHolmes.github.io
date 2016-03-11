@@ -175,6 +175,14 @@ _.indexOf = function(array, value){
 *   use _.each in your implementation
 */
 
+_.filter = function(array, aFunction){
+    var newArray = [];
+    for (var i = 0; i < array.length; i++){
+        if (aFunction(array[i], i, array))
+            newArray.push(array[i]);
+    }
+    return newArray;
+};
 
 /** _.reject()
 * Arguments:
