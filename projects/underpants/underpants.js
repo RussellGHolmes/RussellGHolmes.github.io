@@ -250,6 +250,13 @@ _.partition = function partition(array, aFunction){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function unique(array){
+    var newArray = [];
+    _.each(array, function (element, index, collection){
+       if (_.indexOf(newArray, element) === -1) newArray.push(element); 
+    });
+    return newArray;
+};
 
 /** _.map()
 * Arguments:
