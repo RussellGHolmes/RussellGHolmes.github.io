@@ -134,7 +134,7 @@ _.each = function each(aCollection, aFunction){
             aFunction(aCollection[key], key, aCollection);
         }
     }
-};
+};  
 
 /** _.indexOf()
 * Arguments:
@@ -189,7 +189,9 @@ _.filter = function filter(array, fn){
     
     _.each(array, function (el, i, col) {
         if (fn(el, i, col)) out.push(el);
-    }
+        
+    });
+    
     return out;
 };
 */
@@ -234,8 +236,8 @@ _.reject = function reject(array, aFunction){
 }
 */
 
-_.partition = function partition(array, fn){
-
+_.partition = function partition(array, aFunction){
+    return [_.filter(array, aFunction), _.reject(array, aFunction)];
 };
 
 /** _.unique()
