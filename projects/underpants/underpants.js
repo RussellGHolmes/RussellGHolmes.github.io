@@ -274,6 +274,20 @@ _.unique = function unique(array){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function map(aCollection, aFunction){
+    var newArray = [];
+    if (_.typeOf(aCollection) === "array"){
+        _.each(aCollection, function(element, index, collection){
+            newArray.push(aFunction(element, index, collection));
+        });
+    }
+    if (_.typeOf(aCollection) === "object"){
+        _.each(aCollection, function(value, key, collection){
+            newArray.push(aFunction(value, key, collection));
+        });
+    }
+    return newArray;
+};
 
 /** _.pluck()
 * Arguments:
@@ -286,6 +300,9 @@ _.unique = function unique(array){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function pluck(array, property){
+    
+};
 
 /** _.contains()
 * Arguments:
@@ -302,6 +319,9 @@ _.unique = function unique(array){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function contains(array, value){
+    
+};
 
 /** _.every()
 * Arguments:
@@ -324,6 +344,9 @@ _.unique = function unique(array){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function every(aCollection, aFunction){
+    
+};
 
 /** _.some()
 * Arguments:
@@ -346,6 +369,9 @@ _.unique = function unique(array){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function some(aCollection, aFunction){
+    
+};
 
 /** _.reduce()
 * Arguments:
@@ -366,6 +392,9 @@ _.unique = function unique(array){
 *   _.reduce([1,2,3], function(prev, curr){ return prev + curr}) -> 6
 */
 
+_.reduce = function reduce(array, aFunction, seed){
+    
+};
 
 /** _.extend()
 * Arguments:
@@ -381,6 +410,7 @@ _.unique = function unique(array){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
 
 
 // This is the proper way to end a javascript library
