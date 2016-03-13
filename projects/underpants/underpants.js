@@ -301,8 +301,11 @@ _.map = function map(aCollection, aFunction){
 */
 
 _.pluck = function pluck(array, property){
-    
+    return _.map(array, function(element, index, collection){
+        return element[property];
+    });
 };
+
 
 /** _.contains()
 * Arguments:
