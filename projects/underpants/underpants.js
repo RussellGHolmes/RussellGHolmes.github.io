@@ -338,34 +338,35 @@ _.contains = function contains(array, value){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function every(aCollection, aFunction){
-    if (_.typeOf(aCollection) === "array"){
-        if (_.typeOf(aFunction) === "function"){
-            var filteredArray = _.filter(aCollection, aFunction);
-            return filteredArray.length === aCollection.length; 
-        }
-        else {
-            var filteredArray = _.filter(aCollection, function(element, index, collection){
-                return element;
+_.every = function every(col, func) {
+    var filter;
+    if(_.typeOf(col) === 'array'){
+        if(_.typeOf(func) === 'function'){
+            filter = _.filter(col, func);
+            return (filter.length === col.length);
+        } 
+        else{
+            filter = _.filter(col, function(el, i, arr) {
+                return el;
             });
-            return filteredArray.length === aCollection.length;
+            return (filter.length === col.length);
         }
     }
-    if (_.typeOf(aCollection) === "object"){
-        if (_.typeOf(aFunction) === "function"){
-            var keys = Object.keys(aCollection);
-            var filteredObject = _.filter(keys, function(element, index, collection){
-                return aFunction(collection[element], element, collection);
-            });
-            return !(keys.length === filteredObject.length);
-        }
-        else {
-            var filteredObject = _.filter(keys, function(element, index, collection){
-               return aCollection[element];
-            });
-            return filteredObject.length === keys.length;
-        }
+    if(_.typeOf(col) === 'object'){
+       var theKeys = Object.keys(col);
+       if(_.typeOf(func) === 'function'){
+           filter = _.filter(theKeys, function(el, i, arr) {
+               return func(col[el], el, col);
+           }); 
+           return (theKeys.length === filter.length);
+       }
+       else{
+           filter = _.filter(theKeys, function(el, i, arr) {
+               return col[el];
+           });
+       }
     }
+    
 };
 
 /** _.some()
@@ -390,32 +391,32 @@ _.every = function every(aCollection, aFunction){
 */
 
 _.some = function some(aCollection, aFunction){
-    if (_.typeOf(aCollection) === "array"){
-        if (_.typeOf(aFunction) === "function"){
-            var filteredArray = _.filter(aCollection, aFunction);
-            return filteredArray.length > 0; 
-        }
-        else {
-            var filteredArray = _.filter(aCollection, function(element, index, collection){
-                return element;
+    var filter;
+    if(_.typeOf(aCollection) === 'array'){
+        if(_.typeOf(aFunction) === 'function'){
+            filter = _.filter(aCollection, aFunction);
+            return filter.length > 0;
+        } 
+        else{
+            filter = _.filter(aCollection, function(el, i, arr) {
+                return el;
             });
-            return filteredArray.length > 0;
+            return filter.length > 0;
         }
     }
-    if (_.typeOf(aCollection) === "object"){
-        if (_.typeOf(aFunction) === "function"){
-            var keys = Object.keys(aCollection);
-            var filteredObject = _.filter(keys, function(element, index, collection){
-                return aFunction(collection[element], element, collection);
-            });
-            return !(keys.length === filteredObject.length);
-        }
-        else {
-            var filteredObject = _.filter(keys, function(element, index, collection){
-               return aCollection[element];
-            });
-            return filteredObject.length === keys.length;
-        }
+    if(_.typeOf(aCollection) === 'object'){
+       var theKeys = Object.keys(aCollection);
+       if(_.typeOf(aFunction) === 'function'){
+           filter = _.filter(theKeys, function(el, i, arr) {
+               return aFunction(aCollection[el], el, aCollection);
+           }); 
+           return theKeys.length > 0;
+       }
+       else{
+           filter = _.filter(theKeys, function(el, i, arr) {
+               return aCollection[el];
+           });
+       }
     }
 };
 
@@ -439,6 +440,7 @@ _.some = function some(aCollection, aFunction){
 */
 
 _.reduce = function reduce(array, aFunction, seed){
+    
     
 };
 
