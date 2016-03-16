@@ -176,25 +176,15 @@ _.indexOf = function indexOf(array, value){
 */
 
 _.filter = function filter(array, aFunction){
-    var newArray = [];
-    for (var i = 0; i < array.length; i++){
-        if (aFunction(array[i], i, array))
-            newArray.push(array[i]);
-    }
-    return newArray;
-};
-/*
-_.filter = function filter(array, fn){
     var out = [];
     
     _.each(array, function (el, i, col) {
-        if (fn(el, i, col)) out.push(el);
+        if (aFunction(el, i, col)) out.push(el);
         
     });
     
     return out;
 };
-*/
 
 /** _.reject()
 * Arguments:
@@ -301,7 +291,7 @@ _.map = function map(aCollection, aFunction){
 */
 
 _.pluck = function pluck(array, property){
-    return _.map(array, function(element, index, collection){
+    return _.map(array, function(element){
         return element[property];
     });
 };
@@ -323,7 +313,8 @@ _.pluck = function pluck(array, property){
 */
 
 _.contains = function contains(array, value){
-    
+   return _.indexOf(array, value) > -1 ? true : false;
+   
 };
 
 /** _.every()
@@ -348,7 +339,33 @@ _.contains = function contains(array, value){
 */
 
 _.every = function every(aCollection, aFunction){
-    
+    if (_.typeOf(aCollection) === "array"){
+        if (_.typeOf(aFunction) === "function"){
+            var filteredArray = _.filter(aCollection, aFunction);
+            return filteredArray.length === aCollection.length; 
+        }
+        else {
+            var filteredArray = _.filter(aCollection, function(element, index, collection){
+                return element;
+            });
+            return filteredArray.length === aCollection.length;
+        }
+    }
+    if (_.typeOf(aCollection) === "object"){
+        if (_.typeOf(aFunction) === "function"){
+            var keys = Object.keys(aCollection);
+            var filteredObject = _.filter(keys, function(element, index, collection){
+                return aFunction(collection[element], element, collection);
+            });
+            return !(keys.length === filteredObject.length);
+        }
+        else {
+            var filteredObject = _.filter(keys, function(element, index, collection){
+               return aCollection[element];
+            });
+            return filteredObject.length === keys.length;
+        }
+    }
 };
 
 /** _.some()
@@ -373,7 +390,33 @@ _.every = function every(aCollection, aFunction){
 */
 
 _.some = function some(aCollection, aFunction){
-    
+    if (_.typeOf(aCollection) === "array"){
+        if (_.typeOf(aFunction) === "function"){
+            var filteredArray = _.filter(aCollection, aFunction);
+            return filteredArray.length > 0; 
+        }
+        else {
+            var filteredArray = _.filter(aCollection, function(element, index, collection){
+                return element;
+            });
+            return filteredArray.length > 0;
+        }
+    }
+    if (_.typeOf(aCollection) === "object"){
+        if (_.typeOf(aFunction) === "function"){
+            var keys = Object.keys(aCollection);
+            var filteredObject = _.filter(keys, function(element, index, collection){
+                return aFunction(collection[element], element, collection);
+            });
+            return !(keys.length === filteredObject.length);
+        }
+        else {
+            var filteredObject = _.filter(keys, function(element, index, collection){
+               return aCollection[element];
+            });
+            return filteredObject.length === keys.length;
+        }
+    }
 };
 
 /** _.reduce()
@@ -414,7 +457,9 @@ _.reduce = function reduce(array, aFunction, seed){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-
+_.extend = function extend(object1, object2) {
+    
+};
 
 // This is the proper way to end a javascript library
 }());
