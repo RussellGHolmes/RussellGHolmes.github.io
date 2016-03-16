@@ -440,8 +440,17 @@ _.some = function some(aCollection, aFunction){
 */
 
 _.reduce = function reduce(array, aFunction, seed){
-    
-    
+    if (seed && !previousResult)
+        var previousResult = seed;
+    if (!seed)
+        var seed = array[0];
+    for (var i = 0; i < array.length; i++){
+        if (i === 0){
+            previousResult = aFunction(seed, array[i], i);
+        }
+        else previousResult = aFunction(previousResult, array[i], i);
+    }
+    return previousResult;
 };
 
 /** _.extend()
