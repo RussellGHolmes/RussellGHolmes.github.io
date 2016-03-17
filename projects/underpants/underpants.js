@@ -440,17 +440,15 @@ _.some = function some(aCollection, aFunction){
 */
 
 _.reduce = function reduce(array, aFunction, seed){
-    if (seed && !previousResult)
-        var previousResult = seed;
-    if (!seed)
-        var seed = array[0];
+
     for (var i = 0; i < array.length; i++){
-        if (i === 0){
-            previousResult = aFunction(seed, array[i], i);
+        if (_.typeOf(seed) === "undefined"){
+            seed = array[0];
+            continue;
         }
-        else previousResult = aFunction(previousResult, array[i], i);
+        seed = aFunction(seed, array[i], i);
     }
-    return previousResult;
+    return seed;
 };
 
 /** _.extend()
@@ -468,8 +466,14 @@ _.reduce = function reduce(array, aFunction, seed){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function extend(object1, object2) {
-    
+_.extend = function extend(obj1, obj2) {
+    for (var i = 0; i < arguments.length; i++){
+        if (i === 0) continue;
+        for (var key in arguments[i]){
+            obj1[key] = arguments[i][key];
+        }
+    }
+    return obj1;
 };
 
 // This is the proper way to end a javascript library
