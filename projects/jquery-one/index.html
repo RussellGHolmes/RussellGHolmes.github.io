@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery One</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>jQuery One</h1>
+    <section>
+      <ul>
+        <li>You will code in this index.html file, save and refresh to see the results of your work.</li>
+        <li><a href="directions.html" target="_blank">Directions...</a></li>
+      </ul>
+    </section>
+    <!-- YOUR HTML MARKUP GOES BELOW THIS COMMENT  -->
+    
+    <div id="everything">
+        <h1>A heading!</h1>
+        <p>Here's some text!</p>
+        <p>Here's a second set of text!</p>
+        <div class="holder">
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ul>
+        </div>
+        <div class="holder">
+            <ul>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+                <li>List Item 6</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- YOUR HTML MARKUP GOES ABOVE THIS COMMENT  -->
+  </div>
+  <script>
+    (function () {
+      // Turn h1s blue
+      $('h1').css('color', 'blue');
+// Make the element with id "everything" have a red background
+      $('#everything').css('background-color', 'red');
+// Make all elements with class "holder" have a black border
+      $('.holder').css('border', '1px solid black');
+// Make all li elements inside of ul elements have bold text
+      $('ul li').css('font-weight', 'bold');
+// Makes all p elements immediately following an h1 green
+      $('h1 + p').css('color', 'green');
+      $('<div>')
+        .text('Hello')
+        .prependTo('.container');
+      $('<div>')
+        .text('Goodbye')
+        .appendTo('.container');
+      $('<div>').prependTo('body');
+      $('<div>').appendTo('body');
+      $('div.holder').first().before('<div id="first"></div>');
+      $('div.holder').last().after('<div id="last">End of Text</div>');
+      var detachedDiv = $('<div>What\'s up?</div>');
+      detachedDiv.css('color', 'black');
+      detachedDiv.prependTo('body');
+      //removes all div from page
+      //$('div').remove();
+      //removes everything inside container class  
+      //$('.container').empty();
+      var orphanNode = $('#target').detach();
+      $('.container').append(orphanNode);
+      $('#everything').find('p').css('color', 'white');
+      $('ul').parent().append('<div>Even More Text!</div>');
+      $('ul').children().css('color', 'white');
+      //Math.random().toString(16) returns a hex value that is converted to a string
+      //a hex value returned by Math.random() is a number that is 8 characters long and begins with #0.
+      //.slice() takes the digits/letters between the decimal of the hex value and the final digit 
+      function randomColor() {
+		  return '#' + Math.random().toString(16).slice(2, 8);
+      }
+      setInterval(function(){
+        var element = $('.container').find('h1').first();
+        var color = element.css('color');
+        $('body').css('background', randomColor());
+        if (color === 'rgb(0, 0, 255)') {
+         element.css('color', 'green');
+        }
+        else if (color === 'rgb(0, 128, 0)') {
+          element.css('color', 'purple');
+        }
+        else {
+          element.css('color', 'blue');
+        }
+      }, 500);
+    })();
+  </script>
+</body>
+
+</html>
