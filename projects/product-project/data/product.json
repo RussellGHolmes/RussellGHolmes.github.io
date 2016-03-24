@@ -6,7 +6,7 @@
         "desc": "Samsung Galaxy S6 SM-G920i Unlocked Cellphone, 32GB, Black Sapphire",
         "price": 545.63,
         "color": "Black Sapphire",
-        "availableColors": ["Black Sapphire", "Gold", "White", "Blue Topez"],
+        "availableColors": ["Black Sapphire ", "Gold ", "White ", "Blue Topez"],
         "specs": [
             "Reimagined Design Inside and Out",
             "5.1\" Quad HD Super AMOLED display",
@@ -22,7 +22,7 @@
         "desc": "Samsung Galaxy S6 G920I - 32GB - Factory Unlocked - GSM - Platinum Gold",
         "price": 545.00,
         "color": "Gold",
-        "availableColors": ["Black Sapphire", "Gold", "White", "Blue Topez"],
+        "availableColors": ["Black Sapphire ", "Gold ", "White ", "Blue Topez"],
         "specs": [
             "Reimagined Design Inside and Out",
             "5.1\" Quad HD Super AMOLED display",
@@ -37,7 +37,7 @@
         "desc": "Samsung Galaxy S6 Edge, White Pearl 32GB",
         "price": 699.99,
         "color": "White Pearl",
-        "availableColors": ["Black", "Gold", "White Pearl"],
+        "availableColors": ["Black ", "Gold ", "White Pearl"],
         "specs": [
             ],
         "stock": 16
@@ -49,7 +49,7 @@
         "desc": "Samsung Galaxy S6 case, Nupro Lightweight Protective Snap-on Case for Galaxy S6 - Clear",
         "price": 9.99,
         "color": "Clear",
-        "availableColors": ["Black", "Gold", "White", "Clear", "Red", "Blue"],
+        "availableColors": ["Black ", "Gold ", "White ", "Clear ", "Red ", "Blue "],
         "specs": [
             "Made with durable polycarbonate plastic",
             "Snap on design for a quick and easy installation",
