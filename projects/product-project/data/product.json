@@ -6,7 +6,7 @@
         "desc": "Samsung Galaxy S6 SM-G920i Unlocked Cellphone, 32GB, Black Sapphire",
         "price": 545.63,
         "color": "Black Sapphire",
-        "availableColors": ["Black Sapphire ", "Gold ", "White ", "Blue Topez"],
+        "availableColors": [" Black Sapphire", " Gold", " White", " Blue Topez"],
         "specs": [
             "Reimagined Design Inside and Out",
             "5.1\" Quad HD Super AMOLED display",
@@ -22,7 +22,7 @@
         "desc": "Samsung Galaxy S6 G920I - 32GB - Factory Unlocked - GSM - Platinum Gold",
         "price": 545.00,
         "color": "Gold",
-        "availableColors": ["Black Sapphire ", "Gold ", "White ", "Blue Topez"],
+        "availableColors": [" Black Sapphire", " Gold", " White", " Blue Topez"],
         "specs": [
             "Reimagined Design Inside and Out",
             "5.1\" Quad HD Super AMOLED display",
@@ -37,7 +37,7 @@
         "desc": "Samsung Galaxy S6 Edge, White Pearl 32GB",
         "price": 699.99,
         "color": "White Pearl",
-        "availableColors": ["Black ", "Gold ", "White Pearl"],
+        "availableColors": [" Black", " Gold", " White Pearl"],
         "specs": [
             ],
         "stock": 16
@@ -49,7 +49,7 @@
         "desc": "Samsung Galaxy S6 case, Nupro Lightweight Protective Snap-on Case for Galaxy S6 - Clear",
         "price": 9.99,
         "color": "Clear",
-        "availableColors": ["Black ", "Gold ", "White ", "Clear ", "Red ", "Blue "],
+        "availableColors": [" Black", " Gold", " White", " Clear", " Red", " Blue"],
         "specs": [
             "Made with durable polycarbonate plastic",
             "Snap on design for a quick and easy installation",
@@ -64,7 +64,7 @@
         "desc": "Samsung Galaxy S6 Edge G925F Unlocked Cellphone, 32GB, Gold Platinum",
         "price": 669.79,
         "color": "Gold Platinum",
-        "availableColors": ["Black", "Gold Platinum", "White Pearl", "Emerald Green"],
+        "availableColors": [" Black", " Gold Platinum", " White Pearl", " Emerald Green"],
         "specs": [
             "2G: GSM 850 / 900 / 1800 / 1900, 3G: HSDPA 850 / 900 / 1900 / 2100, 4G: LTE Cat6 700 / 800 / 850 / 900 / 1700 (AWS) / 1800 / 1900 / 2100 / 2600 (Bands 1, 2, 3, 4, 5, 7, 8, 12, 17 18, 19, 20, 26)",
             "5.1-inch Super AMOLED Curved Edge, Multi-Touchscreen w/ Fingerprint sensor, Samsung Pay and Protective Corning Gorilla Glass 4",
@@ -81,7 +81,7 @@
         "desc": "Samsung Galaxy S6 case, Nupro Lightweight Protective Snap-on Case for Galaxy S6 - Mint",
         "price": 8.99,
         "color": "Mint",
-        "availableColors": ["Black", "Mint", "White", "Green", "Rose"],
+        "availableColors": [" Black", " Mint", " White", " Green", " Rose"],
         "specs": [
             "Made with durable polycarbonate plastic",
             "Snap on design for a quick and easy installation",
@@ -96,7 +96,7 @@
         "desc": "Samsung Galaxy S6 case, Nupro Lightweight Protective Snap-on Case for Galaxy S6 - Black",
         "price": 7.99,
         "color": "Black",
-        "availableColors": ["Black", "Mint", "White", "Green", "Rose"],
+        "availableColors": [" Black", " Mint", " White", " Green", " Rose"],
         "specs": [
             "Made with durable polycarbonate plastic",
             "Snap on design for a quick and easy installation",
@@ -111,7 +111,7 @@
         "desc": "Apple iPhone 6, Silver, 16 GB (Unlocked)",
         "price": 699.99,
         "color": "Silver",
-        "availableColors": ["Black", "Silver", "Gold", "White"],
+        "availableColors": [" Black", " Silver", " Gold", " White"],
         "specs": [
             "4.7-inch (diagonal) LED-backlit widescreen Multi-Touch display with IPS technology",
             "New 8-megapixel iSight camera with 1.5µ pixels",
@@ -128,7 +128,7 @@
         "desc": "Apple iPhone 6 Plus 64GB 4G LTE Factory Unlocked GSM Smartphone - Space Gray",
         "price": 905.00,
         "color": "Space Gray",
-        "availableColors": ["Black", "Silver", "Space Gray"],
+        "availableColors": [" Black", " Silver", " Space Gray"],
         "specs": [
             "2G: GSM 850 / 900 / 1800 / 1900, 3G: HSDPA 850 / 900 / 1700 / 1900 / 2100, 4G: LTE 700 / 800 / 850 / 900 / 1700 / 1800 / 1900 / 2100 / 2600",
             "5.5\" LED-backlit IPS LCD Multi-Touchscreen Shatter proof glass, oleophobic coating",
@@ -146,7 +146,7 @@
         "desc": "iPhone 6 Case, Lumsing™ Hybrid High Impact Dual Layer Armor Defender Case Protective Cover for Apple iPhone 6 (4.7 inch Screen) with Screen Protector (Mint Green-Grey)",
         "price": 7.99,
         "color": "Black",
-        "availableColors": ["Black", "Mint", "White", "Green", "Rose"],
+        "availableColors": [" Black", " Mint", " White", " Green", " Rose"],
         "specs": [
             "Specifically designed for the apple iphone 6 4.7 inch (will not fit any other phones)",
             "Double Protection: hard plastic case outside and soft rubber gel silicone skin inside",
@@ -163,7 +163,7 @@
         "desc": "6 Plus Case, iPhone 6 Plus Case, SGM (TM) [Slim Hybrid] Case for iphone 6 Plus 5.5 [Clear Case] - iPhone 6 Plus Bumper Case - With SGM (TM) Microfiber Cleaning Cloth (Hot Pink)",
         "price": 12.99,
         "color": "Hot Pink",
-        "availableColors": ["Hot Pink", "Cool Mint"],
+        "availableColors": [" Hot Pink", " Cool Mint"],
         "specs": [
             "Clear case with combination of flexible TPU and hard Polycarbonate",
             "Provides ultimate protection from scratches, bumps, shocks and its mold keeps the phone trim and trendy",
