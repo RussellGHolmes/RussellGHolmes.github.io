@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/projects/product-project/js/product.css">
         <title>Product Project</title>
     </head>
     <body>
@@ -10,12 +11,23 @@
             <nav>
                 <h1>Product Project</h1>
                 <input type= "search" id="search"/>
+                <button class="sort-highest">Sort products by price (highest first)</button>
+                <button class="sort-lowest">Sort products by price (lowest first)</button>
             </nav>
             <main>
-                <ul id = "products" ></ul>
-                
+                <ul id = "products"></ul>
             </main>
             
+        </div>
+        <div id="product-details" style= "display : none;">
+            <div id="product-details-inner">
+                <button class="close">X</button>
+                <div>
+                    <p class="specs">SPECS GO HERE</p>
+                    <p class="stock">STOCK GOES HERE</p>
+                    <p class="price">PRICE GOES HERE</p>
+                </div>
+            </div>    
         </div>
         <script src="bower_components/lodash/lodash.min.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
