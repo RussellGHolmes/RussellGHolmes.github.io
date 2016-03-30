@@ -35,24 +35,31 @@
         var $products = $('#products');
         $products.empty();
         var $listItems = _.map(products, function(p){
-            var $li = $('<li>')
-                .on("click", function(e){
-                $("#product-details").fadeIn(400)});
+            var $li = $('<li>');
             var $name = $('<p>').text(p.desc);
-            var $price = $('<p>').text("Price: $ " + p.price);
             var $productColor = $('<p>').text("Shown Color: " + p.color);
             var $availableColors = $('<p>').text("Available Colors: " + p.availableColors);
-            if (p.specs.length)
-                var $specs = $('<p>').text("Specifications: " + p.specs);
-            if (p.stock < 15)    
-                var $stock = $('<p>').text("Only " + p.stock + " left in stock!");
-            else 
-                $stock = $('<p>').text("Number left in stock: " + p.stock);
-            var $image = $('<img>').attr('src' , "img/product/thumbs/" + p.image);
-            $li.append([$name, $specs, $price, $stock, $image, $productColor, $availableColors]);
+            var $price = $('<p>').text("Price: $" + p.price);
+            var $image = $('<img>').attr('src' , "img/product/thumbs/" + p.image)
+                .on("click", function(e){
+                    $('#product-details .thumbnail').attr('src', 'img/product/' + p.image);
+                    $('#product-details .name').text(p.desc);
+                    if (p.specs.length > 0) 
+                        $('#product-details-inner .specs').text("Specifications: " + p.specs);
+                    if (p.stock < 15)
+                        $('#product-details-inner .stock').text('Only ' + p.stock + ' left in stock!');
+                    else
+                        $('#product-details-inner .stock').text('Number left in stock: ' + p.stock);
+                    $('#product-details-inner .price').text('Price: $' + p.price);
+                    $("#product-details").fadeIn(400);
+                });
+            
+            $li.append([$image, $name, $price, $productColor, $availableColors]);
+            
             return $li;
         });
         $products.append($listItems);
+    
     }
     
     
@@ -69,7 +76,32 @@
         $(".close", "#product-details").on("click", function(e){
             $("#product-details").fadeOut(400);
         });
+
+        $(".sort-highest").on("click", function(){
+           var highPriceList = allProducts.sort(function(a, b){
+                if (a.price > b.price) {
+                    return -1;
+                }
+                if (a.price < b.price) {
+                    return 1;
+                }
+                return 0;
+           });
+           displayProducts(highPriceList);
+        });
         
+        $(".sort-lowest").on("click", function(){
+           var lowPriceList = allProducts.sort(function(a, b){
+                if (a.price > b.price) {
+                    return 1;
+                }
+                if (a.price < b.price) {
+                    return -1;
+                }
+                return 0;
+           });
+           displayProducts(lowPriceList);
+        });
     }
     
 })();

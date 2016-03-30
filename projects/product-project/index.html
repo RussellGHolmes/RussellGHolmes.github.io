@@ -11,8 +11,8 @@
             <nav>
                 <h1>Product Project</h1>
                 <input type= "search" id="search"/>
-                <button class="sort-highest">Sort products by price (highest first)</button>
-                <button class="sort-lowest">Sort products by price (lowest first)</button>
+                <button class="sort-highest">List products by price (most expensive)</button>
+                <button class="sort-lowest">List products by price (least expensive)</button>
             </nav>
             <main>
                 <ul id = "products"></ul>
@@ -22,10 +22,12 @@
         <div id="product-details" style= "display : none;">
             <div id="product-details-inner">
                 <button class="close">X</button>
-                <div>
-                    <p class="specs">SPECS GO HERE</p>
-                    <p class="stock">STOCK GOES HERE</p>
-                    <p class="price">PRICE GOES HERE</p>
+                <img class="thumbnail"></img>
+                <div id="window-features">
+                    <p class="name"></p>
+                    <p class="specs"></p>
+                    <p class="stock"></p>
+                    <p class="price"></p>
                 </div>
             </div>    
         </div>
@@ -38,7 +40,7 @@
         <script type="text/javascript" src="js/products.js"></script>
         <script>
             $(function () {
-                window.opspark.notes.show();
+                window.opspark.notes.hide();
             });
         </script>
     </body>
