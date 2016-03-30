@@ -42,7 +42,7 @@
             var $price = $('<p>').text("Price: $" + p.price);
             var $image = $('<img>').attr('src' , "img/product/thumbs/" + p.image)
                 .on("click", function(e){
-                    $('#product-details .thumbnail').attr('src', 'img/product/' + p.image);
+                    $('#product-details .image-file').attr('src', 'img/product/' + p.image);
                     $('#product-details .name').text(p.desc);
                     if (p.specs.length > 0) 
                         $('#product-details-inner .specs').text("Specifications: " + p.specs);
@@ -85,8 +85,10 @@
                 if (a.price < b.price) {
                     return 1;
                 }
+                
                 return 0;
            });
+           
            displayProducts(highPriceList);
         });
         

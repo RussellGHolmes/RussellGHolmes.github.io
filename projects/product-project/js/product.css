@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     list-style-type: none;
-}
+    }
 
 #products li {
     padding-top: 20px;
@@ -23,6 +23,7 @@
     background: white;
     position: absolute;
     border-radius: 10px;
+    padding: 20px;
     top: 10vh;
     left: 10vw;
     width: 80vw;
@@ -41,7 +42,7 @@
     right: 10px;
 }
 
-#product-details-inner .thumbnail{
+#product-details-inner .image-file{
     display: flex;
     width: 200px;
     padding: 10px;
@@ -60,4 +61,17 @@
 
 #product-details-inner .name{
     font-weight: bold;
+}
+
+#container .sort-highest{
+    background-color: green;
+    color: white;
+}
+
+#container .sort-lowest{
+    background-color: red;
+}
+
+#container .search{
+    
 }
